@@ -37,13 +37,13 @@ export default function SchoolDetailPage() {
           <ArrowLeft className="w-3.5 h-3.5" /> Back to Schools Directory
         </button>
 
-        {/* View in Principal Phone App Link */}
+        {/* View in Principal Portal Link */}
         <Link
           href={`/school/${school.udise}`}
           className="px-3 py-1.5 rounded-lg bg-primary/20 hover:bg-primary text-primary hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-all"
         >
-          <Smartphone className="w-4 h-4" />
-          <span>Switch to Principal Mobile App View</span>
+          <GraduationCap className="w-4 h-4" />
+          <span>Switch to Principal Portal View</span>
         </Link>
       </div>
 

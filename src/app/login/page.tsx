@@ -66,11 +66,11 @@ const DEMO_ROLES: DemoRoleOption[] = [
   {
     id: "field",
     name: "Rajesh Verma",
-    designation: "Block Education Officer / Field Inspector",
+    designation: "Block Education Officer / Field Inspection",
     email: "beo.jabalpur@mp.gov.in",
     targetUrl: "/field/inspection/SCH-JBP-001",
     icon: ClipboardCheck,
-    badge: "Mobile Inspection",
+    badge: "Field Operations",
     badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30",
   },
   {
@@ -80,7 +80,7 @@ const DEMO_ROLES: DemoRoleOption[] = [
     email: "principal.ranjhi@mp.gov.in",
     targetUrl: "/school/23140101234",
     icon: BookOpen,
-    badge: "School Asset App",
+    badge: "Principal Portal",
     badgeColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
   },
 ];
