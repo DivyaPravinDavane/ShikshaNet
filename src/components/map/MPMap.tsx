@@ -3,7 +3,8 @@
 import React, { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Plus, Minus, RotateCcw, Map as MapIcon, List, Flame } from "lucide-react";
-import { MP_DISTRICT_SHAPES, MP_MAP_CALLOUTS } from "@/data/mp-map-data";
+import { MP_MAP_CALLOUTS } from "@/data/mp-map-data";
+import { REAL_MP_DISTRICTS } from "@/data/mp-real-shapes";
 import districtsData from "@/data/districts.json";
 import { StatusPill } from "@/components/common/StatusPill";
 import { cn } from "@/lib/utils";
@@ -223,7 +224,7 @@ export function MPMap() {
 
           {/* SVG Canvas */}
           <svg
-            viewBox="0 0 840 540"
+            viewBox="0 0 800 520"
             className="w-full h-full"
             style={{
               transform: `translate(${panOffset.x}px, ${panOffset.y}px) scale(${zoomLevel})`,
@@ -232,18 +233,18 @@ export function MPMap() {
             }}
           >
             {/* Background Faint Neighboring States Outline */}
-            <g opacity="0.12" stroke="#FFFFFF" strokeDasharray="3 3" fill="none">
-              <path d="M 80 120 C 140 40, 320 20, 480 30 C 620 40, 780 120, 820 260 C 840 380, 700 520, 420 530 C 220 540, 60 480, 50 340 Z" />
-              <text x="100" y="90" fill="#9AA7C7" fontSize="10" letterSpacing="2">RAJASTHAN</text>
-              <text x="460" y="50" fill="#9AA7C7" fontSize="10" letterSpacing="2">UTTAR PRADESH</text>
-              <text x="730" y="160" fill="#9AA7C7" fontSize="10" letterSpacing="2">CHHATTISGARH</text>
-              <text x="400" y="525" fill="#9AA7C7" fontSize="10" letterSpacing="2">MAHARASHTRA</text>
-              <text x="60" y="380" fill="#9AA7C7" fontSize="10" letterSpacing="2">GUJARAT</text>
+            <g opacity="0.15" stroke="#9AA7C7" strokeDasharray="3 3" fill="none">
+              <path d="M 60 180 C 90 80, 240 40, 360 40 C 440 20, 600 50, 720 160 C 820 250, 780 400, 680 480 C 520 540, 240 530, 100 480 C 40 420, 20 320, 60 180 Z" />
+              <text x="130" y="80" fill="#9AA7C7" fontSize="11" fontWeight="600" letterSpacing="3">RAJASTHAN</text>
+              <text x="490" y="45" fill="#9AA7C7" fontSize="11" fontWeight="600" letterSpacing="3">UTTAR PRADESH</text>
+              <text x="690" y="320" fill="#9AA7C7" fontSize="11" fontWeight="600" letterSpacing="3">CHHATTISGARH</text>
+              <text x="350" y="510" fill="#9AA7C7" fontSize="11" fontWeight="600" letterSpacing="3">MAHARASHTRA</text>
+              <text x="30" y="370" fill="#9AA7C7" fontSize="11" fontWeight="600" letterSpacing="3">GUJARAT</text>
             </g>
 
-            {/* 52 MP Districts Polygons */}
+            {/* 52 Real MP Districts Polygons */}
             <g id="mp-districts-polygons">
-              {MP_DISTRICT_SHAPES.map((shape) => {
+              {REAL_MP_DISTRICTS.map((shape) => {
                 const distData = districtMap.get(shape.id.toLowerCase());
                 const physical = distData ? distData.physical : 70;
                 const fillColor = getDistrictFill(shape.id, physical);
