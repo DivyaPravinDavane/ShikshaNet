@@ -2,9 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Shield, BookOpen, Search, Bell, HelpCircle, Settings, User } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Shield, BookOpen, Search, Bell, HelpCircle, LogOut } from "lucide-react";
 import { RoleSwitcher } from "@/components/layout/RoleSwitcher";
+import { AuthGuard } from "@/components/auth/AuthGuard";
+import { useAuthStore } from "@/store";
 import { cn } from "@/lib/utils";
 
 export default function LightShellLayout({
@@ -13,9 +15,17 @@ export default function LightShellLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const { user, logout } = useAuthStore();
+
+  const handleLogout = () => {
+    logout();
+    router.replace("/login");
+  };
 
   return (
-    <div className="min-h-screen bg-[#F4F7FC] text-[#0F1B3D] flex flex-col select-none">
+    <AuthGuard>
+      <div className="min-h-screen bg-[#F4F7FC] text-[#0F1B3D] flex flex-col select-none">
       {/* Light Top Navbar */}
       <header className="h-[72px] bg-white border-b border-[#E5EAF3] px-6 flex items-center justify-between gap-4 sticky top-0 z-30 shadow-sm">
         {/* Left: Brand */}
@@ -102,15 +112,27 @@ export default function LightShellLayout({
 
           <div className="h-5 w-px bg-[#E5EAF3] mx-1" />
 
-          {/* User profile */}
+          {/* User profile with Logout */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center font-bold text-xs text-primary">
-              RS
+              {user?.name ? user.name.slice(0, 2).toUpperCase() : "RS"}
             </div>
             <div className="hidden md:flex flex-col text-left leading-tight">
-              <span className="text-xs font-bold text-[#0F1B3D]">R. Sharma</span>
-              <span className="text-[10px] text-[#6B7A99]">Official Portal</span>
+              <span className="text-xs font-bold text-[#0F1B3D] truncate max-w-[120px]">
+                {user?.name || "R. Sharma"}
+              </span>
+              <span className="text-[10px] text-[#6B7A99] truncate max-w-[120px]">
+                {user?.designation || "Official Portal"}
+              </span>
             </div>
+
+            <button
+              onClick={handleLogout}
+              className="ml-1 p-1.5 rounded-lg text-rose-500 hover:bg-rose-50 transition-colors"
+              title="Logout from ShikshaNet"
+            >
+              <LogOut className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </header>
@@ -118,5 +140,6 @@ export default function LightShellLayout({
       {/* Main Content */}
       <main className="flex-1">{children}</main>
     </div>
+    </AuthGuard>
   );
 }

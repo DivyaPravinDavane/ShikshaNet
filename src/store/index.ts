@@ -77,3 +77,69 @@ export const useAppStore = create<AppState>((set) => ({
   toggleLanguage: () =>
     set((state) => ({ language: state.language === "EN" ? "HI" : "EN" })),
 }));
+
+export interface AuthUser {
+  name: string;
+  email: string;
+  role: Role;
+  designation: string;
+}
+
+interface AuthState {
+  isAuthenticated: boolean;
+  user: AuthUser | null;
+  login: (user?: Partial<AuthUser>) => void;
+  logout: () => void;
+}
+
+const getInitialAuth = (): boolean => {
+  if (typeof window !== "undefined") {
+    return localStorage.getItem("shikshanet_auth") === "true";
+  }
+  return false;
+};
+
+const getInitialUser = (): AuthUser | null => {
+  if (typeof window !== "undefined") {
+    const raw = localStorage.getItem("shikshanet_user");
+    if (raw) {
+      try {
+        return JSON.parse(raw);
+      } catch {
+        return null;
+      }
+    }
+  }
+  return null;
+};
+
+export const useAuthStore = create<AuthState>((set) => ({
+  isAuthenticated: getInitialAuth(),
+  user: getInitialUser(),
+
+  login: (customUser?: Partial<AuthUser>) => {
+    const defaultUser: AuthUser = {
+      name: customUser?.name || "R. Sharma",
+      email: customUser?.email || "r.sharma.ias@mp.gov.in",
+      role: customUser?.role || "secretary",
+      designation: customUser?.designation || "Principal Secretary, Education",
+    };
+
+    if (typeof window !== "undefined") {
+      localStorage.setItem("shikshanet_auth", "true");
+      localStorage.setItem("shikshanet_user", JSON.stringify(defaultUser));
+    }
+
+    set({ isAuthenticated: true, user: defaultUser });
+  },
+
+  logout: () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("shikshanet_auth");
+      localStorage.removeItem("shikshanet_user");
+    }
+
+    set({ isAuthenticated: false, user: null });
+  },
+}));
+

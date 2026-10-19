@@ -1,14 +1,32 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { ChevronDown, Moon, Sun, Languages, LogOut, ShieldCheck } from "lucide-react";
-import { useAppStore } from "@/store";
+import { useAppStore, useAuthStore } from "@/store";
 
 export function AvatarDropdown() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const { language, toggleLanguage } = useAppStore();
+  const { user, logout } = useAuthStore();
+
+  const handleLogout = () => {
+    setOpen(false);
+    logout();
+    router.replace("/login");
+  };
+
+  const initials = user?.name
+    ? user.name
+        .split(" ")
+        .map((p) => p[0])
+        .slice(0, 2)
+        .join("")
+        .toUpperCase()
+    : "RS";
 
   return (
     <div className="relative">
@@ -16,17 +34,17 @@ export function AvatarDropdown() {
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2.5 p-1 pl-1.5 rounded-lg hover:bg-white/5 transition-all text-left focus:ring-1 focus:ring-primary"
       >
-        {/* Blue Avatar circle "RS" */}
+        {/* Blue Avatar circle */}
         <div className="w-9 h-9 rounded-full bg-primary/25 border border-primary/40 flex items-center justify-center text-primary font-bold text-xs shrink-0 shadow-sm">
-          RS
+          {initials}
         </div>
 
         <div className="hidden sm:flex flex-col leading-tight">
           <span className="text-[13px] font-semibold text-white tracking-tight">
-            R. Sharma
+            {user?.name || "R. Sharma"}
           </span>
           <span className="text-[11px] text-text-muted">
-            Principal Secretary
+            {user?.designation || "Principal Secretary"}
           </span>
         </div>
 
@@ -86,11 +104,11 @@ export function AvatarDropdown() {
 
             <div className="p-1">
               <button
-                onClick={() => setOpen(false)}
+                onClick={handleLogout}
                 className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-rose-400 hover:bg-rose-500/10 transition-colors text-xs text-left"
               >
                 <LogOut className="w-4 h-4" />
-                Logout (Mock)
+                Sign Out / Logout
               </button>
             </div>
           </div>
