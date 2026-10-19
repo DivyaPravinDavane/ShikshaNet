@@ -1,0 +1,75 @@
+{
+  "What should I review today?": {
+    "summary": "Here is your morning executive summary for Madhya Pradesh Education Programmes:",
+    "bullets": [
+      "**287 projects require intervention** across 52 districts, impacting **₹31.4 Cr** in public funds.",
+      "**Rewa District** is currently the highest risk (48% physical progress, 43 schools delayed).",
+      "**Vendor XYZ Constructions** has 19 projects delayed beyond 30 days (₹12.6 Cr contract value).",
+      "**7 executive decisions** are pending your review, including 4 time extensions and 2 milestone payment sign-offs."
+    ],
+    "recommendation": "Recommended Action: Prioritize reviewing the 43 delayed schools in Rewa and issuing a show-cause notice to XYZ Constructions.",
+    "followUps": [
+      "Show delayed schools in Rewa",
+      "Which vendors are underperforming?",
+      "Prepare weekly review for Minister"
+    ]
+  },
+  "Show delayed schools in Rewa": {
+    "summary": "Rewa district currently has 43 delayed schools with an average lag of 46 days. Top affected schools include:",
+    "table": [
+      { "school": "Govt HS Rewa", "programme": "Smart Classroom", "delay": "58 days", "value": "₹26.0 Lakh", "vendor": "Vision Projects" },
+      { "school": "Govt Model Gurh", "programme": "PM SHRI", "delay": "52 days", "value": "₹32.5 Lakh", "vendor": "XYZ Constructions" },
+      { "school": "Govt HSS Sirmour", "programme": "Smart Classroom", "delay": "49 days", "value": "₹18.4 Lakh", "vendor": "XYZ Constructions" },
+      { "school": "Govt Girls HS Hanumana", "programme": "School Infra", "delay": "44 days", "value": "₹21.0 Lakh", "vendor": "Central India Builders" }
+    ],
+    "recommendation": "District Collector Rewa has cited heavy rains and delayed vendor dispatch as the root causes.",
+    "followUps": [
+      "Approve 43 schools extension in Rewa",
+      "Which vendors are underperforming?",
+      "Generate weekly review note"
+    ]
+  },
+  "Which vendors are underperforming?": {
+    "summary": "Based on algorithmic delivery index analysis, two major contractors are marked as 'Poor' performance:",
+    "table": [
+      { "vendor": "XYZ Constructions", "projects": "96", "value": "₹38.2 Cr", "delayRate": "38%", "status": "Poor (High Risk)" },
+      { "vendor": "Vision Projects", "projects": "54", "value": "₹18.6 Cr", "delayRate": "43%", "status": "Poor (High Risk)" },
+      { "vendor": "Central India Builders", "projects": "20", "value": "₹8.4 Cr", "delayRate": "40%", "status": "Poor (Under Notice)" }
+    ],
+    "recommendation": "XYZ Constructions has delayed 19 projects beyond 30 days in Rewa & Jabalpur. Consider withholding upcoming Phase 2 tranches.",
+    "followUps": [
+      "Review performance of Vendor XYZ",
+      "Show payment pending > 30 days",
+      "Prepare weekly review for Minister"
+    ]
+  },
+  "Generate weekly review note": {
+    "summary": "### State Programme Weekly Review Brief — Madhya Pradesh\n**Reporting Period:** 01 Apr 2026 – Present | **Prepared For:** Principal Secretary\n\n1. **Executive Highlights:**\n   - Overall physical progress stands at **74%** (▲ +6% vs last month).\n   - Financial utilization at **68%** (▲ +8% vs last month).\n   - Total operational schools monitored: **8,420** across all 52 districts.\n\n2. **Critical Flashpoints:**\n   - 287 delayed projects (3.4% of active portfolio), tied to **₹31.4 Cr** at-risk outlay.\n   - Lag concentrated in Rewa (48%), Jabalpur (64%), and Satna (62%).\n\n3. **Quality & Inspections:**\n   - 17 inspections flagged for incomplete geotagged evidence.\n   - Joint verification teams dispatched to Sihora and Panagar blocks.",
+    "recommendation": "Briefing ready for export. You can download the formatted PDF from the Reports section.",
+    "followUps": [
+      "Prepare weekly review for Minister",
+      "What should I review today?"
+    ]
+  },
+  "Prepare weekly review for Minister": {
+    "summary": "### Hon'ble Minister Education Briefing Note\n**State of Madhya Pradesh • FY 2026-27**\n\n- **Total Programme Commitment:** ₹2,480 Cr across 8,420 schools.\n- **Overall Delivery Health:** 76% composite achievement index.\n- **Key Achievement:** 32 districts classified 'On Track' with Indore (91%) and Bhopal (88%) leading.\n- **Districts Requiring Department Focus:** Rewa (43 delayed), Jabalpur (32 delayed), Satna (28 delayed).\n- **Immediate Sanctions Required:** 4 statutory approvals queued in Minister Portal.",
+    "recommendation": "This summary is pre-synced with the Minister Screen view.",
+    "followUps": [
+      "Show delayed schools in Rewa",
+      "What should I review today?"
+    ]
+  },
+  "Show payment pending > 30 days": {
+    "summary": "Reconciliation reveals ₹14.8 Cr across 42 vendor invoices pending clearance beyond 30 days:",
+    "table": [
+      { "vendor": "EduBuild Pvt Ltd", "district": "Gwalior", "amount": "₹4.2 Cr", "pendingDays": "38 days", "reason": "Awaiting Joint Director sign-off" },
+      { "vendor": "SB Developers", "district": "Jabalpur", "amount": "₹3.8 Cr", "pendingDays": "34 days", "reason": "Geo-tag photo audit pending" },
+      { "vendor": "GreenClassrooms", "district": "Bhopal", "amount": "₹3.5 Cr", "pendingDays": "31 days", "reason": "Invoice verification queue" }
+    ],
+    "recommendation": "Early clearance will prevent vendor cash-flow disruptions for Q2 execution.",
+    "followUps": [
+      "Approve payment for 82 completed schools",
+      "What should I review today?"
+    ]
+  }
+}

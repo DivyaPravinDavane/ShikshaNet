@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "287 projects require intervention",
+    "subtitle": "₹31.4 Cr at risk • 3.4% of total projects",
+    "details": "Across 52 districts, 287 active work orders are lagging by over 30 days. Primary bottlenecks: vendor raw material supply (42%), local site clearance (31%), and delayed milestone inspection (27%).",
+    "severity": "high",
+    "actionLabel": "Review Delayed Projects",
+    "link": "/projects?status=delayed",
+    "impactValue": "₹31.4 Cr",
+    "affectedCount": 287,
+    "category": "Intervention"
+  },
+  {
+    "id": 2,
+    "title": "Rewa: 43 schools delayed",
+    "subtitle": "₹8.2 Cr value • Average delay 46 days",
+    "details": "Rewa district is performing at 48% physical progress vs 74% state average. 43 schools under Smart Classroom and PM SHRI are impacted. Immediate review with District Collector recommended.",
+    "severity": "high",
+    "actionLabel": "Open Rewa Dashboard",
+    "link": "/commissioner/rewa",
+    "impactValue": "₹8.2 Cr",
+    "affectedCount": 43,
+    "category": "District Alert"
+  },
+  {
+    "id": 3,
+    "title": "Vendor XYZ: 19 projects >30 days late",
+    "subtitle": "₹12.6 Cr value • 2 districts affected",
+    "details": "XYZ Constructions has 19 active works running more than 30 days overdue across Rewa and Jabalpur. Financial claims submitted exceed verified physical execution by ₹4.1 Cr.",
+    "severity": "high",
+    "actionLabel": "Audit Vendor XYZ",
+    "link": "/vendors/v2",
+    "impactValue": "₹12.6 Cr",
+    "affectedCount": 19,
+    "category": "Vendor Alert"
+  },
+  {
+    "id": 4,
+    "title": "17 inspections have incomplete evidence",
+    "subtitle": "Physical verification pending",
+    "details": "17 field verification submissions lack mandatory high-resolution GPS tagged photos of electrical earthing and smart board serial plates. Milestone sign-offs temporarily blocked.",
+    "severity": "medium",
+    "actionLabel": "Inspect Pending Submissions",
+    "link": "/inspections?tab=incomplete",
+    "impactValue": "₹2.8 Cr",
+    "affectedCount": 17,
+    "category": "Quality Verification"
+  },
+  {
+    "id": 5,
+    "title": "Financial progress is 12% higher than physical progress in 17 districts",
+    "subtitle": "Payment-physical mismatch detected",
+    "details": "Automated ledger reconciliation flagged 17 districts where cumulative payments disbursed outpace certified physical completion by >12%. Pre-audit warning generated.",
+    "severity": "medium",
+    "actionLabel": "View Finance Audit",
+    "link": "/finance",
+    "impactValue": "₹18.5 Cr",
+    "affectedCount": 17,
+    "category": "Audit Anomaly"
+  },
+  {
+    "id": 6,
+    "title": "Jabalpur: 32 schools delayed with average 38 days lag in Smart Classroom phase",
+    "subtitle": "Deployment speed down 28%",
+    "details": "Jabalpur district has fallen to 64% overall physical progress. 32 schools require intervention in computer peripheral handover and broadband terminal provisioning.",
+    "severity": "high",
+    "actionLabel": "Open Jabalpur View",
+    "link": "/commissioner/jabalpur",
+    "impactValue": "₹4.6 Cr",
+    "affectedCount": 32,
+    "category": "District Alert"
+  }
+]

@@ -2,26 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Light theme tokens */
+    --bg: #F4F7FC;
+    --sidebar: #FFFFFF;
+    --card: #FFFFFF;
+    --card-2: #F8FAFD;
+    --border: #E2E8F0;
+    --border-subtle: #EDF2F7;
+    --border-rgb: 226, 232, 240;
+    --text: #0F1B3D;
+    --text-muted: #6B7A99;
+  }
+
+  .dark {
+    /* Dark theme tokens (default for Command Centre) */
+    --bg: #0A1128;
+    --sidebar: #0B1330;
+    --card: #0F1B3D;
+    --card-2: #132250;
+    /* Subtle, dark slate-navy border - eliminates harsh white outlines and delivers premium UI */
+    --border: #162449;
+    --border-subtle: #121D3B;
+    --border-rgb: 22, 36, 73;
+    --text: #FFFFFF;
+    --text-muted: #9AA7C7;
+  }
+
+  /* Universal reset so borders default to var(--border) and never fall back to currentColor (white text) */
+  *,
+  ::before,
+  ::after {
+    border-color: var(--border);
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Tabular numerals for all data numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Thin sleek dark & light scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(154, 167, 199, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(154, 167, 199, 0.45);
+}
+
+/* Focus ring standard */
+:focus-visible {
+  outline: 2px solid #2F80FF;
+  outline-offset: 2px;
+}
+
+/* Subtle Card Glow */
+.card-glow {
+  box-shadow: 0 0 24px rgba(47, 128, 255, 0.08);
+}
+
+.kpi-gradient-blue {
+  background: linear-gradient(135deg, rgba(47, 128, 255, 0.12) 0%, rgba(15, 27, 61, 0.8) 100%);
+}
+
+.kpi-gradient-green {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(15, 27, 61, 0.8) 100%);
+}
+
+.kpi-gradient-cyan {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.12) 0%, rgba(15, 27, 61, 0.8) 100%);
+}
+
+.kpi-gradient-purple {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(15, 27, 61, 0.8) 100%);
+}
+
+.kpi-gradient-red {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(15, 27, 61, 0.8) 100%);
+}
+
+.kpi-gradient-orange {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(15, 27, 61, 0.8) 100%);
+}
+
+/* Animations */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s infinite ease-in-out;
 }

@@ -1,0 +1,14 @@
+[
+  { "month": "Apr", "physical": 20, "financial": 14, "schoolsCompleted": 400 },
+  { "month": "May", "physical": 28, "financial": 22, "schoolsCompleted": 900 },
+  { "month": "Jun", "physical": 34, "financial": 28, "schoolsCompleted": 1500 },
+  { "month": "Jul", "physical": 40, "financial": 34, "schoolsCompleted": 2100 },
+  { "month": "Aug", "physical": 46, "financial": 40, "schoolsCompleted": 2800 },
+  { "month": "Sep", "physical": 52, "financial": 46, "schoolsCompleted": 3500 },
+  { "month": "Oct", "physical": 58, "financial": 52, "schoolsCompleted": 4200 },
+  { "month": "Nov", "physical": 62, "financial": 56, "schoolsCompleted": 4900 },
+  { "month": "Dec", "physical": 66, "financial": 60, "schoolsCompleted": 5600 },
+  { "month": "Jan", "physical": 70, "financial": 64, "schoolsCompleted": 6200 },
+  { "month": "Feb", "physical": 78, "financial": 70, "schoolsCompleted": 6900 },
+  { "month": "Mar", "physical": 82, "financial": 74, "schoolsCompleted": 7400 }
+]

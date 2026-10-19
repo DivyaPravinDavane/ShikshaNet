@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Severe Delay Alert: Rewa District",
+    "description": "43 schools marked as critical lag (>45 days overdue). Executive review scheduled.",
+    "time": "12 min ago",
+    "type": "alert",
+    "unread": true
+  },
+  {
+    "id": 2,
+    "title": "Payment Released: Indore TLM Kits",
+    "description": "Tranche 2 disbursement of ₹4.8 Cr processed via PFMS to empanelled vendors.",
+    "time": "45 min ago",
+    "type": "payment",
+    "unread": true
+  },
+  {
+    "id": 3,
+    "title": "Inspection Submitted: Govt HS Ranjhi",
+    "description": "Field Officer R. K. Verma submitted geo-tagged verification with 4 photos.",
+    "time": "1 hour ago",
+    "type": "inspection",
+    "unread": true
+  },
+  {
+    "id": 4,
+    "title": "Vendor Flagged: XYZ Constructions",
+    "description": "Contractor penalty score crossed 35% delay threshold in 2 districts.",
+    "time": "3 hours ago",
+    "type": "vendor",
+    "unread": true
+  },
+  {
+    "id": 5,
+    "title": "AI Risk Prediction: Jabalpur Cluster",
+    "description": "Machine learning forecast predicts 18 additional schools may miss Q1 milestone.",
+    "time": "5 hours ago",
+    "type": "ai",
+    "unread": true
+  }
+]

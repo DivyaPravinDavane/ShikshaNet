@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "title": "Approve 43 schools extension in Rewa",
+    "value": "₹8.2 Cr",
+    "action": "Approve",
+    "priority": "High",
+    "target": "Rewa",
+    "category": "Time Extension",
+    "description": "43 schools under Smart Classroom and PM SHRI in Rewa district require a 45-day extension due to monsoon civil delays. Proposed completion deadline: 30 May 2027.",
+    "impact": "Avoids contract default and ensures lab commissioning before new academic term."
+  },
+  {
+    "id": 2,
+    "title": "Review performance of Vendor XYZ",
+    "value": "19 delayed projects",
+    "action": "Review",
+    "priority": "High",
+    "target": "XYZ Constructions",
+    "category": "Vendor Review",
+    "description": "Vendor XYZ has 19 projects delayed beyond 30 days in Rewa and Jabalpur. Performance notice issued on 28 March. Department review required for penalty imposition or blacklisting.",
+    "impact": "Sets compliance standard and initiates bank guarantee invocation if unresponsive."
+  },
+  {
+    "id": 3,
+    "title": "Escalate pending inspections in Jabalpur",
+    "value": "57 schools",
+    "action": "Escalate",
+    "priority": "Medium",
+    "target": "Jabalpur",
+    "category": "Quality Inspection",
+    "description": "57 physical verification inspections in Jabalpur are overdue by more than 21 days due to BEO staff shortages. Direct Joint Director to assign alternate field teams.",
+    "impact": "Unlocks milestone payments and clears school handover certification."
+  },
+  {
+    "id": 4,
+    "title": "Approve payment for 82 completed schools",
+    "value": "₹12.4 Cr",
+    "action": "Approve",
+    "priority": "High",
+    "target": "Statewide",
+    "category": "Fund Disbursement",
+    "description": "82 schools across 8 districts have completed 100% physical milestone verification with geo-tagged photographic evidence. Fund release ready in PFMS queue.",
+    "impact": "Maintains 94% on-time vendor vendor settlement ratio."
+  },
+  {
+    "id": 5,
+    "title": "Release Phase 2 Smart Class funds for Indore",
+    "value": "₹4.8 Cr",
+    "action": "Approve",
+    "priority": "Medium",
+    "target": "Indore",
+    "category": "Fund Disbursement",
+    "description": "Indore district has achieved 91% physical progress on Phase 1 terminals. Release second tranche of ₹4.8 Cr for 45 secondary schools.",
+    "impact": "Enables timely device delivery before start of monsoon term."
+  },
+  {
+    "id": 6,
+    "title": "Reallocate contractor quota for Chhindwara",
+    "value": "24 schools",
+    "action": "Review",
+    "priority": "Medium",
+    "target": "Chhindwara",
+    "category": "Vendor Reallocation",
+    "description": "24 middle schools in Chhindwara require reallocation from defaulting subcontractor to standby empanelled agency under State Rate Contract.",
+    "impact": "Recovers 35-day project lag."
+  },
+  {
+    "id": 7,
+    "title": "Sanction solar rooftop pilots for 35 PM SHRI schools",
+    "value": "₹3.5 Cr",
+    "action": "Approve",
+    "priority": "Low",
+    "target": "Bhopal / Ujjain",
+    "category": "Green Energy Pilot",
+    "description": "Pilot proposal for 5kW hybrid rooftop solar installations in 35 PM SHRI exemplar schools with high digital lab load.",
+    "impact": "Reduces recurring energy bills by 65% and ensures uninterrupted computer lab uptime."
+  }
+]
