@@ -187,7 +187,7 @@ export default function LoginPage() {
       </header>
 
       {/* Main Login Card Section */}
-      <main className="relative z-10 w-full max-w-xl mx-auto px-6 py-6 flex flex-col items-center">
+      <main className="relative z-10 w-full max-w-2xl mx-auto px-6 py-6 flex flex-col items-center">
         <div className="w-full bg-[#0F1B3D]/80 backdrop-blur-xl border border-border/80 rounded-2xl p-7 sm:p-9 shadow-2xl relative">
           {/* Card Header */}
           <div className="text-center mb-6">
@@ -300,40 +300,46 @@ export default function LoginPage() {
               <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">
                 Quick One-Click Demo Access
               </span>
-              <span className="text-[10px] text-primary font-medium">Select a role</span>
+              <span className="text-[10px] text-primary font-medium">Select a role to preview</span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {DEMO_ROLES.map((role) => {
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {DEMO_ROLES.map((role, idx) => {
                 const Icon = role.icon;
+                const isFullWidth = idx === 4;
+
                 return (
                   <button
                     key={role.id}
                     onClick={() => handleLogin(undefined, role)}
                     disabled={loading}
-                    className="p-2.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-border/60 hover:border-primary/50 text-left transition-all group flex flex-col justify-between disabled:opacity-60"
+                    className={cn(
+                      "p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-border/60 hover:border-primary/50 text-left transition-all group flex items-start gap-3 overflow-hidden disabled:opacity-60",
+                      isFullWidth && "sm:col-span-2"
+                    )}
                   >
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
-                          <Icon className="w-3.5 h-3.5" />
-                        </div>
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
+                      <Icon className="w-4 h-4" />
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-2 min-w-0">
                         <span className="font-bold text-xs text-white group-hover:text-primary transition-colors truncate">
                           {role.name}
                         </span>
+                        <span
+                          className={cn(
+                            "text-[9px] font-semibold px-2 py-0.5 rounded border whitespace-nowrap shrink-0",
+                            role.badgeColor
+                          )}
+                        >
+                          {role.badge}
+                        </span>
                       </div>
-                      <span
-                        className={cn(
-                          "text-[9px] font-semibold px-1.5 py-0.5 rounded border whitespace-nowrap",
-                          role.badgeColor
-                        )}
-                      >
-                        {role.badge}
-                      </span>
+                      <p className="text-[11px] text-text-muted truncate mt-0.5 leading-tight">
+                        {role.designation}
+                      </p>
                     </div>
-                    <p className="text-[10px] text-text-muted truncate mt-1 pl-9">
-                      {role.designation}
-                    </p>
                   </button>
                 );
               })}
